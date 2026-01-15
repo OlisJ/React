@@ -2,10 +2,10 @@ import React from "react";
 import{Text , StyleSheet, View} from "react-native";
 
 const MainScreen = () => {
-    return
+    return(
     <View style={style.container}>
         <Text style={style.TextStyle}>This is the Main Screen</Text>
-    </View> 
+    </View> )
     }
 
 
