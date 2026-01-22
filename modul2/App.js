@@ -1,27 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import{ createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import MainScreen from './screens/MainScreen';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
+let mesazhi ="Hello World!"
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Main" component={MainScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>  
-  );
-}
+ return (
+//  <NavigationContainer>
+//  <Stack.Navigator initialRouteName="Main">
+//  <Stack.Screen name="Main" component={MainScreen} />
+//  </Stack.Navigator>
+//  </NavigationContainer>
 
+<View style={styles.container}>
+  <Text style={styles.TextStyle}>{mesazhi}</Text>
+</View>
+ );
+}
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+ container: {
+ flex: 1,
+ 
+ backgroundColor: 'white',
+ alignItems: 'center',
+ justifyContent: 'center',
+ },TextStyle  : {
+ fontSize: 40,
+ color: 'blue',
+ },
 });
