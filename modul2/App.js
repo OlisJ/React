@@ -1,33 +1,43 @@
 import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import Contact from './screens/Contact';
 import { createStackNavigator } from '@react-navigation/stack';
-import MainScreen from './screens/MainScreen';
+import Home from './screens/Home';
 
-const Stack = createStackNavigator();
+const Stack =  createStackNavigator();
 
-let mesazhi ="Hello World!"
+let mesazhi = "Hello World!"
 
 export default function App() {
- return (
-//  <NavigationContainer>
-//  <Stack.Navigator initialRouteName="Main">
-//  <Stack.Screen name="Main" component={MainScreen} />
-//  </Stack.Navigator>
-//  </NavigationContainer>
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+      <Stack.Screen name="home" component={Home}></Stack.Screen>
+      <Stack.Screen name="contact" component={Contact}></Stack.Screen>
+      </Stack.Navigator>
+    </NavigationContainer>
 
-<View style={styles.container}>
-  <Text style={styles.TextStyle}>{mesazhi}</Text>
-</View>
- );
+
+
+
+    // <View style={styles.container}>
+    //   <Text style={styles.TextStyle}>{mesazhi}</Text>
+    // </View>
+    // <Home/>
+
+  );
 }
+
 const styles = StyleSheet.create({
- container: {
- flex: 1,
- 
- backgroundColor: 'white',
- alignItems: 'center',
- justifyContent: 'center',
- },TextStyle  : {
- fontSize: 40,
- color: 'blue',
- },
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  TextStyle: {
+    color: 'blue',
+    fontSize: 40,
+  }
 });

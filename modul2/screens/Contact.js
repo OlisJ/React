@@ -1,16 +1,16 @@
 import React from "react";
 import { Text, StyleSheet, View } from 'react-native';
+import { Button } from "react-native-web";
 
 
-const MainScreen = () => {
- return (
- <View style={styles.container}>
- <Text style={styles.textStyle}>
- This is the main Text
- </Text>
- </View>
- );
+const Contact =( ) => {
+        return (<View>
+    <Text style={styles.textStyle}>Contact </Text>; 
+    <Button title="Go to Home"
+        onPress={()=>navigation.navigate("Home")}/>
+    </View>)
 };
+
 
 
 const styles = StyleSheet.create({
@@ -27,4 +27,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default MainScreen;
+export default Contact;
