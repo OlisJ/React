@@ -5,8 +5,8 @@ import { Button } from "react-native-web";
 const Home =( ) => {
         return (<View>
     <Text style={styles.textStyle}>Home </Text>; 
-    <Button title="Go to Contact"
-        onPress={()=>navigation.navigate("Contact")}/>
+    <Button title="Go to Second Example"
+        onPress={()=>navigation.navigate("SecondExample")}/>
     </View>)
 };
 

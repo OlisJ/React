@@ -4,6 +4,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import Contact from './screens/Contact';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from './screens/Home';
+import FlatListsExample from './screens/FlatListsExample';
+import SecondExample from './screens/SecondExample';
 
 const Stack =  createStackNavigator();
 
@@ -13,8 +15,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="home" component={Home}></Stack.Screen>
-      <Stack.Screen name="contact" component={Contact}></Stack.Screen>
+      <Stack.Screen name="Home" component={Home}></Stack.Screen>
+      <Stack.Screen name="Contact" component={Contact}></Stack.Screen>
+      <Stack.Screen name="SecondExample" component={SecondExample}></Stack.Screen>
+      <Stack.Screen name="FlatListsExample" component={FlatListsExample}></Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
 
