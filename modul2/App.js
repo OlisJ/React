@@ -6,6 +6,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './screens/Home';
 import FlatListsExample from './screens/FlatListsExample';
 import SecondExample from './screens/SecondExample';
+import React from 'react';
+import ButtonScreen from './screens/ButtonScreen';
 
 const Stack =  createStackNavigator();
 
@@ -15,20 +17,14 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home}></Stack.Screen>
-      <Stack.Screen name="Contact" component={Contact}></Stack.Screen>
-      <Stack.Screen name="SecondExample" component={SecondExample}></Stack.Screen>
-      <Stack.Screen name="FlatListsExample" component={FlatListsExample}></Stack.Screen>
+      <Stack.Screen name="ButtonScreen" component={ButtonScreen}></Stack.Screen>
+    
       </Stack.Navigator>
     </NavigationContainer>
 
 
 
 
-    // <View style={styles.container}>
-    //   <Text style={styles.TextStyle}>{mesazhi}</Text>
-    // </View>
-    // <Home/>
 
   );
 }
