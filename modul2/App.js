@@ -8,6 +8,9 @@ import FlatListsExample from './screens/FlatListsExample';
 import SecondExample from './screens/SecondExample';
 import React from 'react';
 import ButtonScreen from './screens/ButtonScreen';
+import TestScreen from './screens/TestScreen';
+import MenuScreen from './screens/MenuScreen';
+import StudentScreen from './screens/StudentScreen';
 
 const Stack =  createStackNavigator();
 
@@ -16,8 +19,10 @@ let mesazhi = "Hello World!"
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-      <Stack.Screen name="ButtonScreen" component={ButtonScreen}></Stack.Screen>
+      <Stack.Navigator initialRouteName='MenuScreen'> 
+      <Stack.Screen name="MenuScreen" component={MenuScreen}></Stack.Screen>
+      <Stack.Screen name="Test" component={TestScreen}></Stack.Screen>
+      <Stack.Screen name="Students" component={StudentScreen}></Stack.Screen>
     
       </Stack.Navigator>
     </NavigationContainer>
