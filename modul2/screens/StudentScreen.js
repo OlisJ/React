@@ -6,9 +6,9 @@ const TestScreen = () => {
     return(
         <View>
             <Text style={styles.textStyle}>This is the Students Screen</Text>
-            <StudentDetails name="John Doe" description="A passionate student interested in web development." image={require('../assets/student1.jpg')}/>
-            <StudentDetails name="Jane Smith" description="An enthusiastic learner pursuing computer science." image={require('../assets/student2.jpg')}/>
-            <StudentDetails name="Bob Johnson" description="A dedicated student working on mobile app development." image={require('../assets/student3.jpg')}/>
+            <StudentDetails name="John Doe" description="A passionate student interested in web development." image={require('../assets/download.jpg')}/>
+            <StudentDetails name="Jane Smith" description="An enthusiastic learner pursuing computer science." image={require('../assets/download.jpg')}/>
+            <StudentDetails name="Bob Johnson" description="A dedicated student working on mobile app development." image={require('../assets/download.jpg')}/>
         </View>
     )
  }
