@@ -6,7 +6,9 @@ const Projects = (props) => {
    return (
        <View style={styles.container}>
            <View style={styles.cardWrapper}>
-               <Image source={props.image} style={styles.img} />
+               <View style={styles.imgWrapper}>
+                   <Image source={props.image} style={styles.img} />
+               </View>
                <View style={styles.infoWrapper}>
                    <Text style={styles.title}>{props.title || 'Project'}</Text>
                    {props.description ? <Text style={styles.description}>{props.description}</Text> : null}
@@ -23,29 +25,33 @@ const styles = StyleSheet.create({
     cardWrapper: {
         flexDirection: 'row',
         backgroundColor: '#ffffff',
-        borderRadius: 10,
+        borderRadius: 12,
         width: '95%',
         alignSelf: 'center',
-        marginBottom: 12,
-        padding: 12,
+        marginBottom: 14,
+        padding: 14,
         alignItems: 'center',
         shadowColor: '#000',
-        shadowOpacity: 0.04,
-        shadowRadius: 6,
-        shadowOffset: { width: 0, height: 2 },
-        elevation: 1
+        shadowOpacity: 0.06,
+        shadowRadius: 10,
+        shadowOffset: { width: 0, height: 4 },
+        elevation: 3
     },
     img: {
-        width: 80,
-        height: 80,
-        borderRadius: 8,
+        width: '100%',
+        height: '100%',
+        borderRadius: 10,
         resizeMode: 'cover'
     },
     imgWrapper: {
-        width: 80,
-        height: 80,
+        width: 92,
+        height: 92,
         overflow: 'hidden',
-        borderRadius: 8
+        borderRadius: 12,
+        marginRight: 14,
+        backgroundColor: '#f8fbff',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     infoWrapper: {
         flex: 1,
@@ -54,12 +60,12 @@ const styles = StyleSheet.create({
     },
     title: {
         fontWeight: '700',
-        fontSize: 16,
-        color: '#111'
+        fontSize: 17,
+        color: '#0f1720'
     },
     description: {
-        marginTop: 6,
-        color: '#444'
+        marginTop: 8,
+        color: '#6b7280'
     }
 });
 

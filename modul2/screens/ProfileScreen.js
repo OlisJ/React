@@ -5,55 +5,94 @@ import Projects from '../components/Projects';
 
 const ProfileScreen = () => {
     return (
-        <ScrollView
-            style={{ flex: 1, backgroundColor: '#f7f8fa' }}
-            contentContainerStyle={{ paddingVertical: 24, paddingHorizontal: 12, alignItems: 'center' }}
-        >
-            <View style={styles.header}>
-                <Text style={styles.screenTitle}>Profile</Text>
+        <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+            <View style={styles.headerCard}>
+                <View style={styles.headerLeftAccent} />
+                <View style={styles.headerContent}>
+                    <Text style={styles.screenTitle}>Profile</Text>
+                    <Text style={styles.screenSubtitle}>Overview of personal info and recent work</Text>
+                </View>
             </View>
 
             <StudentInfo
                 fullname="John Doe"
                 position="Student"
-                description="A passionate student interested in web development. Loves building user interfaces and learning new frameworks."
+                description="A passionate student focused on web and mobile development. Skilled at building clean UI and learning modern frameworks."
                 image={require('../assets/download.jpg')}
             />
 
-            <View style={{ width: '100%', marginTop: 8 }}>
+            <View style={styles.sectionWrapper}>
                 <Text style={styles.sectionTitle}>Projects</Text>
-                <Projects image={require('../assets/projet.jpg')} title={'School Project'} description={'A basic school assignment demonstrating layout.'} />
+                <Projects
+                    image={require('../assets/projet.jpg')}
+                    title={'School Project'}
+                    description={'A concise project showcasing layout, responsive design and basic interactivity.'}
+                />
             </View>
         </ScrollView>
     )
 }
 
- const styles =StyleSheet.create({
-    textStyle: {
-        fontSize: 30,
-        textAlign: 'center',
-        marginVertical: 20,
-        color: '#111'
-    }
- });
-
-export const extraStyles = StyleSheet.create({
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#f4f6f8'
+    },
+    contentContainer: {
+        paddingVertical: 28,
+        paddingHorizontal: 16,
+        alignItems: 'center'
+    },
     header: {
         width: '100%',
+        alignItems: 'flex-start',
+        marginBottom: 12,
+        paddingHorizontal: 8
+    },
+    headerCard: {
+        width: '100%',
+        backgroundColor: '#ffffff',
+        borderRadius: 12,
+        padding: 12,
+        marginBottom: 16,
+        flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 8
+        shadowColor: '#000',
+        shadowOpacity: 0.06,
+        shadowRadius: 10,
+        shadowOffset: { width: 0, height: 4 },
+        elevation: 3
+    },
+    headerLeftAccent: {
+        width: 6,
+        height: 48,
+        backgroundColor: '#4f46e5',
+        borderRadius: 4,
+        marginRight: 12
+    },
+    headerContent: {
+        flex: 1
     },
     screenTitle: {
-        fontSize: 22,
+        fontSize: 26,
         fontWeight: '700',
-        color: '#111'
+        color: '#0f1720'
+    },
+    screenSubtitle: {
+        marginTop: 6,
+        fontSize: 13,
+        color: '#6b7280'
+    },
+    sectionWrapper: {
+        width: '100%',
+        marginTop: 12,
+        paddingHorizontal: 8
     },
     sectionTitle: {
         fontSize: 18,
         fontWeight: '600',
-        color: '#111',
-        marginVertical: 12,
-        paddingHorizontal: 12
+        color: '#0f1720',
+        marginBottom: 8
     }
 });
 
