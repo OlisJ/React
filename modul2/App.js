@@ -1,19 +1,22 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
+import{createAppContainer} from 'react-navigation';
 import { StyleSheet, Text, View } from 'react-native';
-import Contact from './screens/Contact';
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './screens/Home';
-import FlatListsExample from './screens/FlatListsExample';
-import SecondExample from './screens/SecondExample';
-import React from 'react';
-import ButtonScreen from './screens/ButtonScreen';
 import TestScreen from './screens/TestScreen';
 import MenuScreen from './screens/MenuScreen';
 import StudentScreen from './screens/StudentScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import BoxScreen from './screens/BoxScreen';
 
-const Stack =  createStackNavigator();
+const Stack =  createStackNavigator(
+  {Menu: MenuScreen,
+    Test:TestScreen,
+    Excercise:ExcerciseScreen,
+    Student:StudentScreen,
+    Profile:ProfileScreen,
+    Box:BoxScreen
+  }
+);
 
 let mesazhi = "Hello World!"
 
