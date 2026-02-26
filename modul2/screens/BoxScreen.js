@@ -3,18 +3,13 @@ import {Text,View,StyleSheet} from 'react-native';
 
 const BoxScreen =()=>{
     return(
-        <View style={styles.container}>
-            <Text>Box Screen</Text>
+        <View style={{flex:1, flexDirection:'row'}}>
+            <View style={{height:100, width:100, backgroundColor:'red'}}/>
+            <View style={{height:100, width:100, backgroundColor:'blue'}}/>
+            <View style={{height:100, width:100, backgroundColor:'green'}}/>
         </View>
     );   
 };
 
-const styles=StyleSheet.create({
-    container:{
-        flex:1,
-        flexDirection:'row'
-    },
-
-});
 
 export default BoxScreen;
