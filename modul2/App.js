@@ -1,7 +1,7 @@
 
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Names from './screens/Names';
+
 import PostScreen from './screens/PostScreen';
 
 const Stack =  createStackNavigator(

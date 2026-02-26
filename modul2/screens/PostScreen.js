@@ -10,7 +10,7 @@ class PostScreen extends React.Component{
     }
 
     async componentDidMount(){
-        const data = await fetch('');
+        const data = await fetch('https://jsonplaceholder.typicode.com/posts');
         const jsonData = await data.json();
         this.setState({posts:jsonData})
     }
