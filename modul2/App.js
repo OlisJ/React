@@ -1,8 +1,7 @@
 
 import { StyleSheet, Text, View } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-
-import PostScreen from './screens/PostScreen';
+import Photos from './screens/fetchphoto';
 
 const Stack =  createStackNavigator(
   {}
@@ -11,8 +10,8 @@ const Stack =  createStackNavigator(
   
 export default function App() {
   return (
-    // <Names/>
-    <PostScreen/>
+  
+    <Photos/>
   );
 }
 
