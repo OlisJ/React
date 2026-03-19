@@ -1,47 +1,201 @@
-import { StyleSheet } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import ListScreen from './screens/ListScreen';
+import BoxScreen from './screens/BoxScreen';
+import Albums from './screens/fetchalbum';
+import Photo from './screens/fetchphoto';
+import Posts from './screens/fetchdata';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { StatusBar } from 'expo-status-bar';
-import { NavigationContainer } from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Ionicon} from '@expo/vector-icons';
-import Photos from './screens/fetchphoto';
-import FlatListsExample from './screens/FlatListsExample';
-import Home from './screens/Home';
+import {Ionicons} from '@expo/vector-icons';
+import {createDrawerNavigator , DrawerContentScrollView , DrawerItem, DrawerItemList} from '@react-navigation/drawer'
 
-const Tabs = createBottomTabNavigator();
+const Drawer = createDrawerNavigator()
+
+
+
+function CostumDrawerContent(props){
+
+  return(
+    <View style={{flex:1 , backgroundColor:'#1a11a2e'}}>
+      <View style={styles.drawerHeader}>
+        <View style={styles.avatarContainer}>
+          <Ionicons name='planet-outline' size={50} color={'#e94560'}/>
+          
+        </View>
+        <Text style={styles.drawerHeaderTitle}>Fetching Data</Text>
+        <Text style={styles.drawerHeaderSubtitle}>Explore Data</Text>
+      </View>
+
+      <DrawerContentScrollView {...props} contentContainerStyle={{paddingTop: 10}}>
+        <DrawerItemList {...props}/>
+      </DrawerContentScrollView>
+
+      <View style={styles.drawerFooter}>
+        <Ionicons name='code-slash-outline' size={16} color={'#555'}/>
+        <Text style={styles.drawerFooter}>React Native</Text>
+
+      </View>
+
+    </View>
+  );
+
+}
+
+
 
 export default function App() {
   return (
+    <>
     <NavigationContainer>
-      <Tabs.Navigator screenoptions={({route})=>({
-        tabBarIcon:({focused,color,size})=>{
-          let iconName;
-          if (route.name === 'FlatListsExample'){
-              iconName = focused ? "flag" : "flag-outline";
-          }
-          else {
-            iconName = focused ? "newspaper" : "newspaper-outline";
-          }
-          return <Ionicon name={iconName} size={size} color={color} />;
-        }
-      })}>
-        <Tabs.Screen name="ListScreen" component={FlatListsExample} />
-        <Tabs.Screen name="Home" component={Home} />
-      </Tabs.Navigator>
+      <StatusBar style='light'/>
+      <Drawer.Navigator
+      drawerContent={(props) => <CostumDrawerContent {...props}/>}
+      screenOptions={{
+        drawerStyle: {
+          backgroundColor: '#1a1a2e',
+          width: 280,
+
+        },
+        drawerLabelStyle: {
+          fontSize: 16,
+          fontWeight: '600',
+          marginLeft: -10,
+        },
+
+        drawerActiveTintColor: '#e94560',
+        drawerInactiveTintColor: '#a0a0b0',
+        drawerActiveBackgroundColor: '#16213e',
+
+
+        drawerItemStyle:{
+          borderRadius: 12 ,
+          marginHorizontal: 10 ,
+          marginVertical: 4,
+          paddingVertical: 2,
+
+        },
+        headerStyle: {
+          backgroundColor: '#16213e',
+          elevation: 0 ,
+          shadowOpacity: 0 ,
+        },
+        headerTintColor: '#ffff',
+        headerTitleStyle:{
+          fontWeight: 'bold',
+          fontSize:20,
+
+        },
+
+      }} 
+      >
+        {/* <Drawer.Screen
+        name='BoxScreen'
+        component={BoxScreen}
+        options={{
+          title: 'BoxModel',
+          drawerIcon: ({color , size}) => (
+            <Ionicons name='globe-outline' size={size} color={color}/>
+          ),
+
+        }}
+        /> */}
+        <Drawer.Screen
+        name='ListScreen'
+        component={ListScreen}
+        options={{
+          title: 'ListScreen',
+          drawerIcon: ({color , size}) => (
+            <Ionicons name='document-text-outline' size={size} color={color}/>
+          ),
+
+        }}
+        />
+        <Drawer.Screen
+        name='AlbumScreen'
+        component={Albums}
+        options={{
+          title: 'AlbumScreen',
+          drawerIcon: ({color , size}) => (
+            <Ionicons name='document-text-outline' size={size} color={color}/>
+          ),
+
+        }}
+        />
+
+        <Drawer.Screen
+        name='PhotoScreen'
+        component={Photo}
+        options={{
+          title: 'PhotoScreen',
+          drawerIcon: ({color , size}) => (
+            <Ionicons name='document-text-outline' size={size} color={color}/>
+          ),
+
+        }}
+        />
+        <Drawer.Screen
+        name='PostsScreen'
+        component={Posts}
+        options={{
+          title: 'PostsScreen',
+          drawerIcon: ({color , size}) => (
+            <Ionicons name='document-text-outline' size={size} color={color}/>
+          ),
+
+        }}
+        />
+
+      </Drawer.Navigator>
+      
+
+    
     </NavigationContainer>
+
+
+    </>
+
   );
 }
 
 const styles = StyleSheet.create({
-  container: {  
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  
+  drawerHeader:{
+    backgroundColor: '#16213e',
+    paddingTop: 50,
+    paddingBottom:25,
+    paddingHorizontal: 20, 
+    borderBottomWidth: 1 ,
+    borderBottomColor: '#0F3460',
+    alignItems : 'center'
   },
-  TextStyle: {
-    color: 'blue',
-    fontSize: 40,
+  avatarContainer:{
+    width: 80,
+    height : 50,
+    borderRadius:40,
+    backgroundColor:'#1a1a2e',
+    borderWidth:2,
+    borderColor: '#e94560',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom:12,
+  
+  },
+  drawerHeaderTitle : {
+    color: '#ffff',
+    fontSize:12 ,
+    fontWeight : 'bold',
+
+  },
+  drawerHeaderSubtitle: {
+    color: 'a0a0b0',
+    fontSize: 12, 
+    marginTop: 4,
+  },
+  drawerFooter:{
+    flexDirection: 'row',
+    alignItems:'center',
+    justifyContent: 'center',
   }
 });

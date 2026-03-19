@@ -27,11 +27,11 @@ class Posts extends React.Component{
             <View style={styles.container}  >
                 <Text style={styles.title}>Posts</Text>
 
-                <View style={styles.navRow}>
+                {/* <View style={styles.navRow}>
                     <Button title="Users" onPress={() => navigation.navigate('Users')} />
                     <Button title="Albums" onPress={() => navigation.navigate('Albums')} />
                     <Button title="Photos" onPress={() => navigation.navigate('Photos')} />
-                </View>
+                </View> */}
 
                 <FlatList
                 data={posts}
