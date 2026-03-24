@@ -36,15 +36,60 @@ const ProductScreen = () => {
                             </View>
                         );
                         }
-                />
+                    }
+                /> 
             </Text>
         </View>
     );  
 };
 
-const styles = StyleSheet.create({ 
-    listContent: {
-        padding: 10,
+const styles = StyleSheet.create({
+    container:{
+        flex: 1,
+        backgroundColor: '#f5f5f5',
     },
-});
-    
+    header:{
+        fontSize: 24,
+        fontWeight: 'bold',
+        padding: 16,
+        paddingTop: 50,
+        backgroundColor: '#fff',
+     },
+    listContent: {
+        padding: 12,
+    },
+    card: {
+        flexDirection: 'row',
+        backgroundColor: '#fff',
+        borderRadius: 12,
+        marginBottom: 12,
+        padding: 12,
+        alignItems: 'center',
+        elevation: 2,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.1,
+        shadowRadius: 4,
+     },
+        
+        img:{
+            width: 80,
+            height: 80,
+            borderRadius: 8,
+        },
+
+        textContainer:{
+            flex: 1,
+            paddingHorizontal: 12,
+            justifyContent: 'center',
+        },
+        title:{
+            fontSize: 14,
+            fontWeight: '500',
+            color: '#333',
+            marginBottom: 6,
+        },
+        price:{
+            fontSize: 16,
+            fontWeight: 'bold', 
+        } });
