@@ -7,11 +7,12 @@ import {Ionicons} from '@expo/vector-icons';
 import {createDrawerNavigator , DrawerContentScrollView , DrawerItem, DrawerItemList} from '@react-navigation/drawer'
 import ProductScreen from './screens/ProductScreen';
 import Slider from './screens/Example';
+import Home from './screens/HomeIcon'
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Slider/>
-    </NavigationContainer>
+    <View>
+      <Home/>
+    </View>
   );
 }
