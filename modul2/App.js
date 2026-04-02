@@ -6,13 +6,20 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Ionicons} from '@expo/vector-icons';
 import {createDrawerNavigator , DrawerContentScrollView , DrawerItem, DrawerItemList} from '@react-navigation/drawer'
 import ProductScreen from './screens/ProductScreen';
-import Slider from './screens/Example';
-import Home from './screens/HomeIcon'
 
 export default function App() {
   return (
     <View>
-      <Home/>
+      <ProductScreen/>
     </View>
   );
 }
+
+const styles = StyleSheet.create({ 
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
