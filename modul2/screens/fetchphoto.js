@@ -26,11 +26,11 @@ class Photos extends React.Component {
             <View style={styles.container}>
                 <Text style={styles.title}>Photos</Text>
 
-                {/* <View style={styles.navRow}>
+                { <View style={styles.navRow}>
                     <Button title="Users" onPress={() => navigation.navigate('Users')} />
                     <Button title="Albums" onPress={() => navigation.navigate('Albums')} />
                     <Button title="Posts" onPress={() => navigation.navigate('Posts')} />
-                </View> */}
+                </View> }
 
                 <FlatList
                     data={photos}
